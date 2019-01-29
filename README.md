@@ -1,7 +1,7 @@
 WindowPositionSaver
 # WindowPositionSaver
 WPF library for saving and restoring window position on the screen. Works independently for 3 different monitor configurations.
-### Place this 3 methods to your window code:
+### Add WindowPositionSaver DLL to references and usings and then place this 3 methods to your window code:
 Constructor:
 ```sh
 WPS.WPS_Window_Constructor(this);

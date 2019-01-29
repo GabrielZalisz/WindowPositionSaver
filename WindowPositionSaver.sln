@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28306.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{4EA6E2B2-2002-4A7A-AFD8-945B3B712937}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowPositionSaver", "WindowPositionSaver\WindowPositionSaver.csproj", "{B150B5AB-1686-48CE-8253-D430FF4CE085}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EA6E2B2-2002-4A7A-AFD8-945B3B712937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA6E2B2-2002-4A7A-AFD8-945B3B712937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA6E2B2-2002-4A7A-AFD8-945B3B712937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA6E2B2-2002-4A7A-AFD8-945B3B712937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B150B5AB-1686-48CE-8253-D430FF4CE085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B150B5AB-1686-48CE-8253-D430FF4CE085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B150B5AB-1686-48CE-8253-D430FF4CE085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B150B5AB-1686-48CE-8253-D430FF4CE085}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04B7A969-0309-4554-A41F-F116E3C12D5B}
+	EndGlobalSection
+EndGlobal

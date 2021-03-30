@@ -13,29 +13,48 @@ namespace WindowPositionSaver
             //tohle může být v loadu nebo konstruktoru
             try
             {
-                Nastaveni.Nacist();
-                Nastaveni.SetCurrentNastaveni(SystemParameters.VirtualScreenWidth, SystemParameters.VirtualScreenLeft);
-
-                if (Nastaveni.CurrentNastaveni.LastUse.Year <= 2000)
-                {
-                    w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                    Nastaveni.CurrentNastaveni.LastUse = DateTime.Now;
-                }
-                else
-                {
-                    //musí být
-                    w.WindowStartupLocation = WindowStartupLocation.Manual;
-
-                    w.Left = Nastaveni.CurrentNastaveni.Left;
-                    w.Top = Nastaveni.CurrentNastaveni.Top;
-                    w.Width = Nastaveni.CurrentNastaveni.Width;
-                    w.Height = Nastaveni.CurrentNastaveni.Height;
-
-                    Nastaveni.CurrentNastaveni.LastUse = DateTime.Now;
-                }
-                Nastaveni.Ulozit();
+                WPS_Window_Constructor_pom(w);
             }
-            catch { }
+            catch (Exception ex) 
+            {
+                var iex = ex.InnerException;
+                if (iex != null && iex is ConfigurationException)
+                {
+                    var iiex = iex as ConfigurationException;
+                    string file = iiex.Filename;
+                    File.Delete(file);
+                    try
+                    {
+                        WPS_Window_Constructor_pom(w);
+                    }
+                    catch { }
+                }
+            }
+        }
+
+        static void WPS_Window_Constructor_pom(Window w)
+        {
+            Nastaveni.Nacist();
+            Nastaveni.SetCurrentNastaveni(SystemParameters.VirtualScreenWidth, SystemParameters.VirtualScreenLeft);
+
+            if (Nastaveni.CurrentNastaveni.LastUse.Year <= 2000)
+            {
+                w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                Nastaveni.CurrentNastaveni.LastUse = DateTime.Now;
+            }
+            else
+            {
+                //musí být
+                w.WindowStartupLocation = WindowStartupLocation.Manual;
+
+                w.Left = Nastaveni.CurrentNastaveni.Left;
+                w.Top = Nastaveni.CurrentNastaveni.Top;
+                w.Width = Nastaveni.CurrentNastaveni.Width;
+                w.Height = Nastaveni.CurrentNastaveni.Height;
+
+                Nastaveni.CurrentNastaveni.LastUse = DateTime.Now;
+            }
+            Nastaveni.Ulozit();
         }
 
         public static void WPS_Window_Loaded(Window w)
